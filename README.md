@@ -82,3 +82,6 @@ The router converts all router-link to 'a' tags, but the difference is that the 
 
 Generally we use the router-link tag for any internal links, and 'a' tag for any external links.
 
+## Creating Routes
+Is recomended to load all the destinations we have available in the store file, 
+and dinamically create a link for each.    
