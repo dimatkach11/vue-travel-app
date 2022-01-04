@@ -84,4 +84,27 @@ Generally we use the router-link tag for any internal links, and 'a' tag for any
 
 ## Creating Routes
 Is recomended to load all the destinations we have available in the store file, 
-and dinamically create a link for each.    
+and dinamically create a link for each.
+
+Webpack preloadplugin can add a prefetch tag to all async chunks. To prevent this, add the following to your vue.config.js
+
+```js
+chainWebpack: config => {
+config.plugins.delete('prefetch');
+}
+```
+[how to lazy load routes with vue router](https://vueschool.io/lessons/how-to-lazy-load-routes-with-vue-router)
+
+
+## Load Vue Components Asynchronously
+Lazy-load vue.js components to improve performance.
+By lazy-loading our single file components, we reduce the size of the JavaScript bundle our users has to download before they can interact with our applications.
+
+We'll use a technique called Code Splitting, which is a common technique that has become the defacto golden standard.
+
+When the user is browsing the home page, instead of downloading the whole application code, they will just download the home component and what's absolutely necessary. 
+
+When a component is not a page we can still to import it dinamically when we need it.
+
+[dynamically load components](https://vueschool.io/lessons/dynamically-load-components)
+

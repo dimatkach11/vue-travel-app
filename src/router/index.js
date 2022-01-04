@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "@/views/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -18,19 +18,19 @@ const routes = [
   },
   {
     path: "/hawaii",
-    name: "Brazil",
+    name: "Hawaii",
     component: () =>
       import(/* webpackChunkName: "hawaii" */ "../views/Hawaii.vue"),
   },
   {
     path: "/jamaica",
-    name: "Brazil",
+    name: "Jamaica",
     component: () =>
       import(/* webpackChunkName: "jamaica" */ "../views/Jamaica.vue"),
   },
   {
     path: "/panama",
-    name: "Brazil",
+    name: "Panama",
     component: () =>
       import(/* webpackChunkName: "panama" */ "../views/Panama.vue"),
   },

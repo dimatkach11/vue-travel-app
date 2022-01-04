@@ -36,7 +36,7 @@ export default {
 
 <style scoped>
 .home {
-  min-width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 img {
@@ -45,5 +45,6 @@ img {
 .destinations {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 </style>
