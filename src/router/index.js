@@ -40,6 +40,7 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+  linkExactActiveClass: "router-link-exact-active-dima",
 });
 
 export default router;

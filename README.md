@@ -108,3 +108,6 @@ When a component is not a page we can still to import it dinamically when we nee
 
 [dynamically load components](https://vueschool.io/lessons/dynamically-load-components)
 
+## Vue Router Active Class
+The active class is automatically handled by the router-link component and allows us to mark which route we are currently viewing with CSS.
+
