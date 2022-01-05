@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home container">
     <h1>All Destinations</h1>
     <div class="destinations">
       <div v-for="destination in destinations" :key="destination.name">

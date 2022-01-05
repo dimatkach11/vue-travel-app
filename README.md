@@ -177,3 +177,48 @@ and make it equal to the id that comes from our destination data.
   :to="{ name: 'DestinationDetails', params: { id: destination.id } }"
 ></router-link>
 ```
+
+## Vue Router Dynamic Routes
+
+How to work with dynamic routes in Vue router.
+
+How to declare the dynamic routes and also how to fetch and use the dynamic data in our components.
+
+In our router/index.js we need to add the params of id to the end of thr destination-details path.
+
+```js
+path: "/destination-details/:id",
+```
+
+The colon (:) declares a dynamic segment in the path which allows us to respond
+to URL's matching the specified pattern. So when user visits /destination-details/1 or /destination-details/2 
+the user will be served the same routes when the path is set to /destination-details/:id.
+
+In the DestinationDetails page, we need to retrieve the value from the params, 
+so let's create a new data property called destinationId and give it the value of
+this.$route.params.id. It is not actually necessary to create this to get what we want, but it makes our code much cleaner and easy to follow. 
+
+Now in oer template we can add the destination.name, .image and .desription. 
+But how will it know wich how destination to show?
+
+Let's add a computed property with a function called destination. 
+Computed property allow us to define a property with that is used the same way as data property
+but can also have some custom logic.
+We use now a find method to find a dastination in our destinations store array that math a test function,
+
+```js
+computed: {
+  destination() {
+    return store.destinations.find(
+      (destination) => destination.id == this.destinationId
+    );
+  },
+},
+```
+
+Basically, we are saying go to the store and use the destinations array and find the destination whose id 
+is equal to the destinationId that we get from the params.
+
+In the script we need to import the store so we have access to the data.
+
+Now from home page if we click on Panama it will go to the DestinationDetails page and load the details of Panama and it will put the id of 2 at the end of the url.
